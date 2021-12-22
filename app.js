@@ -13,8 +13,9 @@ dotenv.config();
 const authRouter = require('./routes/auth');
 
 const { sequelize } = require('./models');
-// const passportConfig = require('./passport');
+const passportConfig = require('./passport');
 const mainRouter = require('./routes/main');
+const cardRouter = require('./routes/card');
 
 
 
@@ -29,7 +30,7 @@ const server = http.createServer(app);
 const moment = require("moment");
 require('moment-timezone')
 moment.tz.setDefault("Asia/Seoul");
-// exports.moment=moment;
+exports.moment=moment;
 
 
 // const socketIO = require("socket.io");
@@ -47,7 +48,7 @@ moment.tz.setDefault("Asia/Seoul");
 //   });
 // })
 
-// passportConfig(); // 패스포트 설정
+passportConfig(); // 패스포트 설정
 
 app.set('port', process.env.PORT || 6002);
 app.set('view engine', 'htm');
@@ -59,7 +60,7 @@ nunjucks.configure('views', {
 sequelize
   .sync({ focus: false })
   .then(() => {
-    console.log("*** MySQL 연결 성공 ***");
+    console.log("*** 아베마리아 연결 성공 ***");
   })
   .catch((err) => {
     console.error(err);
@@ -85,7 +86,7 @@ app.use(passport.session());
 
 //라우터
 app.use('/', mainRouter);
-
+app.use('/card', cardRouter);
 app.use('/auth', authRouter);
 
 
