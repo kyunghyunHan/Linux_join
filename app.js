@@ -48,11 +48,8 @@ moment.tz.setDefault("Asia/Seoul");
 // })
 
 // passportConfig(); // 패스포트 설정
-const options = {
-	host:  "0.0.0.0",
-    port: 3000
-}
-// app.set('port', process.env.PORT || 6002);
+
+app.set('port', process.env.PORT || 6002);
 app.set('view engine', 'htm');
 nunjucks.configure('views', {
   express: app,
@@ -106,7 +103,6 @@ app.use((err, req, res, next) => {
 });
 
 
-// server.listen(app.get('port'), () => {
-//   console.log(app.get('port'), '번 포트에서 대기중');
-// });
-app.listen(options, () => console.log(`http://${options.host}:${options.port}`));
+server.listen(app.get('port'), () => {
+  console.log(app.get('port'), '번 포트에서 대기중');
+});
