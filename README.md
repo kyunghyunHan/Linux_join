@@ -93,6 +93,7 @@ const sha256 = require('sha256');
 
 ## 게시물작성 
 ![포스트](https://user-images.githubusercontent.com/88940298/147194087-2c6420f2-2c15-4db5-9312-27075eaca262.gif)
+![스크린샷 2021-12-23 오후 3 57 38](https://user-images.githubusercontent.com/88940298/147201289-d2b348bf-cf24-4504-a176-11db3b0e0bfa.png)
 
 
 
