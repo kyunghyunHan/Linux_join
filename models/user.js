@@ -16,7 +16,10 @@ module.exports = class User extends Sequelize.Model {
                 type: Sequelize.STRING(100),
                 allowNull: true,
             },
-         
+            img: {//이미지
+                type: Sequelize.STRING(200),
+                allowNull: true,
+              },
         }, {
             sequelize,
             timestamps: true,
@@ -30,6 +33,6 @@ module.exports = class User extends Sequelize.Model {
     }
 
     static associate(db) {
-       
+        db.User.hasOne(db.Post);
     }
 };
