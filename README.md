@@ -27,6 +27,23 @@ node-pre-gyp WARN Tried to download(404): https://github.com/kelektiv/node.bcryp
 
 [해결] npm install bcrypt@3.0.6 --save 로 bcrypt 버전 다운그레이드
 
+## 🌱MariaDB 설치 후 재시작 시 에러
+
+[문제] System has not been booted with systemd as init system (PID 1). Can't operate.
+Failed to connect to bus: Host is down
+[시도]
+- 삭제 후 재설치
+1. sudo apt-get purge mariadb-*
+2. sudo apt autoremove
+3. dpkg -l | grep mysql
+4. sudo apt-get purge mysql-common
+5. apt -y install mariadb-server mariadb-client
+6. systemctl restart/enable/status mariadb
+-  그래도 안됨
+[해결] systemctl 명령어는 VMware에 설치한 Ubuntu에서는 지원하지만
+WSL은 systemctl 명령어를 지원하지 않는다.
+systemctl 명령어 대신 sudo service mysql start 명령어를 통해 실행시킬 수 있었다.
+
 ## 🌱npx sequelize db:create 데이터베이스 생성시도
 [문제] ERROR: Access denied for user ‘syusmm’@’localhost’ (using password: Yes)
 ![다운로드](https://user-images.githubusercontent.com/88940298/147200067-4a8f5078-db0a-4438-a90b-974dff7aa86d.png)
