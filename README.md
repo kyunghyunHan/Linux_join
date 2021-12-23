@@ -33,12 +33,14 @@ node-pre-gyp WARN Tried to download(404): https://github.com/kelektiv/node.bcryp
 Failed to connect to bus: Host is down
 [시도]
 - 삭제 후 재설치
+```
 1. sudo apt-get purge mariadb-*
 2. sudo apt autoremove
 3. dpkg -l | grep mysql
 4. sudo apt-get purge mysql-common
 5. apt -y install mariadb-server mariadb-client
 6. systemctl restart/enable/status mariadb
+```
 -  그래도 안됨
 [해결] systemctl 명령어는 VMware에 설치한 Ubuntu에서는 지원하지만
 WSL은 systemctl 명령어를 지원하지 않는다.
@@ -50,11 +52,13 @@ systemctl 명령어 대신 sudo service mysql start 명령어를 통해 실행�
 
 오류 발생 
 [시도]
+```
 1. 비번 변경->아님 / 사용자 변경 -> 안됨
 2. mariadb계정 권한설정 -> 안됨 / 우분투파일권한설정 -> 안됨
 3. mariadb계정 플러그인 업데이트 -> 안됨  
 4. Sudu mysql_secure_installation 시도-> 안됨->새 오류 등장
-ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) sudo su-들어가서 service mysql start 실행하니 해결됨
+```
+- ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) sudo su-들어가서 service mysql start 실행하니 해결됨
 하지만 여전히 db생성은 안됨
 
 [해결] config에 mariadb포트 “port”:”3307” 넣고 실행, db생성됨
