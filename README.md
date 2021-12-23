@@ -13,4 +13,14 @@
 - nodejs 및 시퀄라이즈 config파일 마리아 디비 연동
 - 도커 +리눅스 우분투 서버 연동
 
-## ![로그인 회원가입](https://user-images.githubusercontent.com/88940298/147193381-45788792-1440-4881-90f8-d9a016cde552.gif)
+## 로그인 회원가입
+![로그인 회원가입](https://user-images.githubusercontent.com/88940298/147193381-45788792-1440-4881-90f8-d9a016cde552.gif)
+
+
+## 게시물작성 
+![포스트](https://user-images.githubusercontent.com/88940298/147194087-2c6420f2-2c15-4db5-9312-27075eaca262.gif)
+
+
+
+## 게시물삭제 
+![게시물삭제](https://user-images.githubusercontent.com/88940298/147193988-b26505a5-9786-4798-8480-530ccc6c485f.gif)
