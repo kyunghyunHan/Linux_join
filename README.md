@@ -15,7 +15,7 @@
 - rds(mariadb)
 
 ## 발생한 이슈
-- npm 다운로드
+### 🌱npm 다운로드
 [상황] 리눅스 서버에서 npm install 을 통한 모듈 다운
 
 [문제] bcrypt 다운 에러
@@ -27,6 +27,18 @@ node-pre-gyp WARN Tried to download(404): https://github.com/kelektiv/node.bcryp
 
 [해결] npm install bcrypt@3.0.6 --save 로 bcrypt 버전 다운그레이드
 
+## 🌱npx sequelize db:create 데이터베이스 생성시도
+[문제] ERROR: Access denied for user ‘syusmm’@’localhost’ (using password: Yes)
+오류 발생 
+[시도]
+1. 비번 변경->아님 / 사용자 변경 -> 안됨
+2. mariadb계정 권한설정 -> 안됨 / 우분투파일권한설정 -> 안됨
+3. mariadb계정 플러그인 업데이트 -> 안됨  
+4. Sudu mysql_secure_installation 시도-> 안됨->새 오류 등장
+ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock' (2) sudo su-들어가서 service mysql start 실행하니 해결됨
+하지만 여전히 db생성은 안됨
+
+[해결] config에 mariadb포트 “port”:”3307” 넣고 실행, db생성됨
 
 ## 마리아 디비 연동
 ![스크린샷 2021-12-23 오후 2 16 24](https://user-images.githubusercontent.com/88940298/147191584-0f8723f3-6b4d-4747-995c-d30f4127c5ef.png)
