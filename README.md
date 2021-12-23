@@ -13,6 +13,7 @@
 - passport
 - nunjucks
 - rds(mariadb)
+- axios
 
 ## 발생한 이슈
 ### 🌱npm 다운로드
