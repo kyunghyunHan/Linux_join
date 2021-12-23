@@ -7,6 +7,27 @@
 - 로그인및 회원가입 구현
 - 이미지 업로드 및 게시판 구현(SNS)
 
+## 사용한 기술 
+- 리눅스(도커,우분투) 
+- nodejs,express
+- passport
+- nunjucks
+- rds(mariadb)
+
+## 발생한 이슈
+- npm 다운로드
+[상황] 리눅스 서버에서 npm install 을 통한 모듈 다운
+
+[문제] bcrypt 다운 에러
+```
+node-pre-gyp WARN Using needle for node-pre-gyp https download 
+
+node-pre-gyp WARN Tried to download(404): https://github.com/kelektiv/node.bcrypt.js/releases/download/v3.0.6/bcrypt_lib-v3.0.6-node-v72-win32-x64-unknown.tar.gz 
+```
+
+[해결] npm install bcrypt@3.0.6 --save 로 bcrypt 버전 다운그레이드
+
+
 ## 마리아 디비 연동
 ![스크린샷 2021-12-23 오후 2 16 24](https://user-images.githubusercontent.com/88940298/147191584-0f8723f3-6b4d-4747-995c-d30f4127c5ef.png)
 - aws rds + 마리아 디비 인스턴스 생성 및 연결
