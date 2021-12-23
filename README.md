@@ -50,6 +50,22 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run
 ![로그인 회원가입](https://user-images.githubusercontent.com/88940298/147193381-45788792-1440-4881-90f8-d9a016cde552.gif)
 
 
+- 해시값 sha256 을사용한 해시값 저장
+```
+const sha256 = require('sha256');
+  const hash = await sha256(password, 12);
+    await User.create({
+      email,
+      password: hash,
+      name,
+      img:req.body.url,
+    
+     
+    });
+
+```
+![스크린샷 2021-12-23 오후 3 43 03](https://user-images.githubusercontent.com/88940298/147199690-a110a986-26f8-4b83-becf-026f865aa41a.png)
+
 ## 게시물작성 
 ![포스트](https://user-images.githubusercontent.com/88940298/147194087-2c6420f2-2c15-4db5-9312-27075eaca262.gif)
 
