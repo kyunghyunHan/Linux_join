@@ -64,7 +64,7 @@ const sha256 = require('sha256');
     });
 
 ```
-![스크린샷 2021-12-23 오후 3 43 03](https://user-images.githubusercontent.com/88940298/147199690-a110a986-26f8-4b83-becf-026f865aa41a.png)
+- 비밀번호 해시값 저장: ![스크린샷 2021-12-23 오후 3 43 03](https://user-images.githubusercontent.com/88940298/147199690-a110a986-26f8-4b83-becf-026f865aa41a.png)
 
 ## 게시물작성 
 ![포스트](https://user-images.githubusercontent.com/88940298/147194087-2c6420f2-2c15-4db5-9312-27075eaca262.gif)
