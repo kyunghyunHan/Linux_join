@@ -77,7 +77,7 @@ systemctl 명령어 대신 sudo service mysql start 명령어를 통해 실행�
 
 
 - 해시값 sha256 을사용한 해시값 저장
-```
+```js
 const sha256 = require('sha256');
   const hash = await sha256(password, 12);
     await User.create({
